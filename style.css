@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: gray;
+}
+
+header {
+    background-color: teal;
+}
+
+.name {
+    text-align: center;
+    padding: 20px;
+    color: whitesmoke;
+}
+
+button {
+    height: 30px;
+    width: 150px;
+    color: white;
+    background-color: teal;
+    border-color: violet;
+    cursor: pointer;
+    outline: none;
+    font-size: 10px;
+    font-weight: bold;
+    margin: 1em;
+}
+button:hover {
+    background-color: forestgreen;
+    opacity: 0.50;
+}
+button:active {
+    background-color: lightgray;
+}
+.buttons {
+    border-radius: 2px;
+    padding: 1em;
+    width: 640px;
+    text-align: center;
+    display: flex;
+}
+#showGarden {
+    border-radius: 2px 0 0 2px;
+}
+#showAll {
+    border-radius: 0 2px 2px 0;
+}
+ul {
+    line-height: 2em;
+    list-style-type: none;
+    color: darkgreen;
+    margin: 1em 0 0 1.5em;
+    font-size: 1.3em;
+}
