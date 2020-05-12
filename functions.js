@@ -52,8 +52,14 @@ let products = [
 
 let chosenDepartment = "";
 
+
 function renderProducts() {
-  let html = ""; // Your code here!
+  let html = ""; 
+  //  html = products.filter(product => {
+  //    return product.department === chosenDepartment;
+  //  } ).map(product) => { 
+  //     return `<li> ${product} </li>`
+  //  }// Your code here!
   /*
     using the product array
 
@@ -81,7 +87,20 @@ function renderProducts() {
     filter functions, one for checking if it's in stock, the other for checking
     the chosenDepartment.
     */
-
+html = products.filter(function (product) {
+  return product.quantity > 0;
+}).filter(function (product) {
+  return (chosenDepartment) ? product.department === chosenDepartment : true 
+}).map(function (product) {
+  return `
+  <li>
+      <h3>${product.name}</h3>
+      <div>Price:   $${product.price}
+  </li>
+  `
+}).reduce(function (content, item) {
+  return content + item;
+})
   let elem = document.getElementById("productList");
   elem.innerHTML = html;
 }
