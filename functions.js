@@ -53,7 +53,15 @@ let products = [
 let chosenDepartment = "";
 
 function renderProducts() {
-  let html = ""; // Your code here!
+  let html = ""; 
+  
+  html = products.filter(products => products.quantity > 0 ) 
+  .filter(products => chosenDepartment ? products.department === chosenDepartment: true)
+  .map(products => `<li><h3>${products.name}</h3></li><li> Price: ${products.price}</li>`)
+  .reduce((currentHTML, itemString) => currentHTML + itemString);
+
+  
+  // Your code here!
   /*
     using the product array
 
