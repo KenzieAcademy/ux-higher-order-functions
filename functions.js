@@ -53,7 +53,24 @@ let products = [
 let chosenDepartment = "";
 
 function renderProducts() {
-  let html = ""; // Your code here!
+  let html = "";
+  let allProducts = products.filter(function(product){
+    return product.quantity > 0;
+  }).filter(function(product) {
+    if (chosenDepartment === "") {
+      return product;
+    } else {
+      return product.department === chosenDepartment;
+    }
+  }).map(function(product) {
+    return `
+        <li>
+        <h3>${product.name}</h3>
+        <p>$${product.price}</p>
+        </li>`
+  }).reduce(function(list, product) {
+    return list + product;
+  });
   /*
     using the product array
 
@@ -83,25 +100,25 @@ function renderProducts() {
     */
 
   let elem = document.getElementById("productList");
-  elem.innerHTML = html;
+  elem.innerHTML = html + allProducts;
 }
 
 window.onload = () => {
   renderProducts(products);
   document.getElementById("showAll").onclick = function () {
     chosenDepartment = "";
-    renderProducts();
+    renderProducts(products);
   };
   document.getElementById("showHardware").onclick = function () {
     chosenDepartment = "hardware";
-    renderProducts();
+    renderProducts(products);
   };
   document.getElementById("showGarden").onclick = function () {
     chosenDepartment = "garden";
-    renderProducts();
+    renderProducts(products);
   };
   document.getElementById("showTools").onclick = function () {
     chosenDepartment = "tool";
-    renderProducts();
+    renderProducts(products);
   };
 };
