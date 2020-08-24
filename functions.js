@@ -55,7 +55,7 @@ let chosenDepartment = "";
 function renderProducts() {
   let html = "";
   let allProducts = products.filter(function(product){
-    product.quantity > 0;
+    return product.quantity > 0;
   }).filter(function(product) {
     if (chosenDepartment === "") {
       return product;
@@ -101,8 +101,6 @@ function renderProducts() {
 
   let elem = document.getElementById("productList");
   elem.innerHTML = html + allProducts;
-  // but how do I do a TEXT on the COMPUTER FACE
-  elem.appendChild(allProducts);
 }
 
 window.onload = () => {
