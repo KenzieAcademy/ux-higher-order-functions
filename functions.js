@@ -87,7 +87,7 @@ function renderProducts() {
 }
 
 window.onload = () => {
-  renderProducts(products);
+  renderProducts();
   document.getElementById("showAll").onclick = function () {
     chosenDepartment = "";
     renderProducts();
