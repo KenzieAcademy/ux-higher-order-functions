@@ -53,8 +53,25 @@ let products = [
 let chosenDepartment = "";
 
 function renderProducts() {
-  let html = ""; // Your code here!
+  let html = "";
+  let inStockProducts = products.filter(
+    (productItem) => productItem.quantity > 0
+  );
+  let departmentItems = inStockProducts.filter((productItem) =>
+    chosenDepartment ? productItem.department === chosenDepartment : true
+  );
+  let newArrayOfItems = departmentItems.map(
+    (productItem) =>
+      `<li> <h3> ${productItem.name} </h3> $${productItem.price} </li>`
+  );
+  html = newArrayOfItems.reduce(
+    (accumulator, currentValue) => accumulator + currentValue
+  );
+  // console.log("mapped items", newArrayOfItems);
+
+  // Your code here!
   /*
+  
     using the product array
 
     Perform a filter, a map, and a reduce function. (Just like in the reading!)
