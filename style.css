@@ -1,0 +1,28 @@
+button {
+  transition-duration: 0.5s;
+}
+
+button:hover {
+  background-color: burlywood;
+}
+
+h1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: rgb(100, 149, 237);
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  border: rgb(100, 149, 237) dotted 0.5rem;
+  padding: 4rem;
+  box-shadow: darkgray 1px 1px 4px 2px;
+  background-color: rgb(204, 173, 88);
+}
+
+.pagewrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
